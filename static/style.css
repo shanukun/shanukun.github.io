@@ -11,6 +11,7 @@
 
 
 html {
+    font-family: "InterVar", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
     background: var(--light);
 }
 
@@ -35,7 +36,6 @@ a {
 }
 
 .heading {
-    font-family: "InterVar", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
     padding-top: 1rem;
     padding-left: 1rem;
 }
