@@ -1,4 +1,5 @@
 :root {
+    --black: rgb(33, 33, 33);
     --dark: #444;
     --light-gray: #eee;
     --medium-gray: #ddd;
@@ -9,200 +10,216 @@
     --darker: #222;
 }
 
-
 html {
-    font-family: "InterVar", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
-    background: var(--light);
+    font-family: "Inter";
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 }
 
-::selection {
-    background: var(--medium-gray);
-    opacity: 0.3;
-}
-
-
-body {
-    max-width: 700px;
-    margin: auto;
-    background: var(--white);
-}
-
-a {
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    word-wrap: break-word;
+}
+
+body {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 0.7em;
+    background: var(--white);
+    border: 1px solid var(--black);
+    box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);
+}
+
+
+h1, h2, h3, h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    color: #080808;
 }
 
 .heading {
-    padding-top: 1rem;
-    padding-left: 1rem;
+    position: relative;
+    height: 10em;
+    overflow: hidden;
+}
+.heading img {
+    width: 100%;
+}
+
+.heading h1 {
+    position: absolute;
+    color: var(--white);
+    top: 1em;
+    left: 1em;
+    padding: 0.3em;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 
-nav {
-    background: var(--light);
+nav ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 1.9em;
+    background-color: var(--black);
+}
+
+nav li {
+    float: left;
+    text-transform: uppercase;
 }
 
 nav a {
-    color: var(--darker);
-    border-bottom: 1.5px solid var(--medium-gray);
-
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 0.5em;
 }
 
-nav ul {
-    display: inline-flex;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    margin: 0;
-    list-style: none;
+nav a:hover {
+    background-color: var(--light);
+    color: var(--black);
 }
 
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    padding-right: 1rem;
+footer {
+    background-color: var(--cyan)
 }
 
-ol {
-    padding: 0;
-    margin-top: 10px;
-    counter-reset: counter;
+.content td {
+    padding: 0.1em 0.5em;
 }
 
-ol li {
-    counter-increment: counter;
-}
-
-table {
-  table-layout: fixed;
-  width: 100%;
-}
-
-
-table a {
-  text-decoration: none;
-}
-
-td {
-  padding: 7px 11px 7px 11px;
-}
-
-td p#subtitle {
-  color: var(--gray);
-}
-
-td:first-child {
-  padding-left: 0;
-}
-
-td:last-child {
-  padding-right: 0;
-}
-
-
-
-.content h1, h2, h3 {
-    font-family: "InterDisplay", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
-    font-weight: 500;
-}
-
-.content h1 {
-    font-size: 20px;
-    padding: 10px 0 10px 0;
-}
-
-.content h2 {
-    font-size: 18px;
-}
-
-.content h3 {
-    font-size: 16px;
-}
-
-.content h2, h3 {
-    padding: 20px 0 5px 0;
-    text-decoration: underline;
-}
-
-.content a {
-    color: var(--darker);
-    border-bottom: 1.5px solid var(--medium-gray);
-}
-
-.content ul, .content ol {
-    margin: 0 3px 7px 3px;
-}
-
-.content ul ul {
-    margin-bottom: 0
-}
-
-
-a:hover {
-    border-bottom: 1.5px solid var(--gray);
+.content tr:nth-child(even) {
+    background-color: var(--light-gray);
 }
 
 
 .content {
-    padding: 1rem;
+    max-width: 700px;
+    margin: auto;
+    padding: 2em;
 }
 
-.content article img {
-    max-width: 100%;
-    width: 100%;
+.content > * {
+    margin-bottom: 0.3em;
+}
+
+.content p {
+    margin-bottom: 1em;
+}
+
+.content a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.content a::before {
+  content: '';
+  background-color: var(--black);
+  position: absolute;
+  left: 0;
+  bottom: -0.01em;
+  height: 1px;
+  width: 20%;
+  z-index: -1;
+}
+
+.content a:hover {
+    color: var(--white);
+}
+
+.content a:hover::before {
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.content p, .content li, .content a, .content td {
+    font-family: Inter;
+    letter-spacing: 0.55px;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.content h1, .content h2, .content h3.after{
+    letter-spacing:1px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 16px 0;
+    grid-gap: 22px;
+}
+
+.content h2::after {
+    content: " ";
     display: block;
-    margin: 10px auto 4px auto;
+    border-bottom: 2px solid #eee;
+    background-color:#ffffff;
 }
 
-
-pre {
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 10px;
-    min-width: 0;
-    background-color: var(--light-gray) !important;
-    margin-bottom: 10px;
+.content h2, .content h3, .content h4, h5 {
+    margin-top: 1.5em;
 }
 
-code {
-    font-size: 0.9rem;
-    background-color: var(--light-gray);
+.content ul {
+    list-style: none;
 }
 
-hr {
-    max-width: 100%;
-    text-align: left;
-    margin: 10px 0 10px 0;
+.content li {
+    margin-bottom: 0.3rem;
 }
 
-blockquote {
-    margin: 7px 0 7px 0;
+.content ul li::before {
+    content: "\00bb ";
+    padding-right: 0.6em;
+
 }
 
-blockquote p {
-    font-style: italic;
-    color: var(--darker);
-    padding-left: 20px;
-    border-left: 1.5px solid var(--medium-gray);
-}
 
 
 footer {
-    margin-top: 0.5em;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    font-size: 80%;
-    color: #bbb;
-}
-
-footer a {
-    color: #bbb;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.7em 2.4em;
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.footer a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.footer a::before {
+  content: '';
+  background-color: var(--white);
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  height: 1px;
+  width: 20%;
+  z-index: -1;
+}
+
+.footer a:hover {
+    color: var(--black);
+}
+
+.footer a:hover::before {
+  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
