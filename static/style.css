@@ -184,7 +184,32 @@ footer {
 
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 1em;
+}
 
+.image-grid h2::after {
+    content: "";
+    display: block;
+    border-bottom: 0;
+    background-color: #ffffff;
+}
+
+.image-grid .image-item img {
+    padding: 3px;
+    object-fit: contain;
+    width: 350px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 385px) {
+    .image-grid {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
 
 footer {
     color: var(--white);
